@@ -22,18 +22,23 @@ public class JdbcTest {
             // 2. Create a statement
             myStmt = myConn.createStatement();
 
+
             //3. Insert a new city
-         System.out.println("Inserting a new employee to DB\n");
-//            int rowsAffected = myStmt.executeUpdate("insert into world.city " + "(Name,CountryCode,District,Population)" + "values " + "('Kiev','KUI','Troeshina',3000000)");
+            System.out.println("Inserting a new city to DB\n");
+            int rowsAffected = myStmt.executeUpdate(
+                    "insert into world.tablefirst" +"(id,username,abra)"+
+                            "values"  + "('134','Ponya','2013-12-30')");
 
 
-            // 4. Execute SQL Query
-            myRs = myStmt.executeQuery("select*from world.city order by Name");
+            // 4. Get the list of emloyees
+            myRs = myStmt.executeQuery("select*from world.tablefirst order by id");
 
             // 5. Process the result set
             while (myRs.next()) {
-                System.out.println( myRs.getString("Name") + ", " + myRs.getString("CountryCode") + ", " + myRs.getString("District") + "," + myRs.getString("Population"));
+                System.out.println(myRs.getString("id") + ", " + myRs.getString("username") + ", " + myRs.getString("abra"));
             }
+
+
         } catch (Exception exc) {
             exc.printStackTrace();
         } finally {
