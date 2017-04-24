@@ -3,7 +3,7 @@ import java.sql.*;
 /**
  * Created by alex on 29.03.2017.
  */
-public class JdbcTest {
+public class InsertIntoTable {
 
     public static void main(String[] args) throws SQLException {
         Connection myConn = null;
@@ -11,8 +11,8 @@ public class JdbcTest {
         ResultSet myRs = null;
 
         String dbURL = "jdbc:mysql://localhost:3306/?useSSL=false";
-        String user = "student";
-        String pass = "student";
+        String user = "root";
+        String pass = "Qwerty!1";
 
         try {
             // 1. Get Connection to DB
@@ -27,7 +27,7 @@ public class JdbcTest {
             System.out.println("Inserting a new city to DB\n");
             int rowsAffected = myStmt.executeUpdate(
                     "insert into world.tablefirst" +"(id,username,abra)"+
-                            "values"  + "('134','Ponya','2013-12-30')");
+                            "values"  + "('4','Ponya','2013-12-30')");
 
 
             // 4. Get the list of emloyees
@@ -35,7 +35,7 @@ public class JdbcTest {
 
             // 5. Process the result set
             while (myRs.next()) {
-                System.out.println(myRs.getString("id") + ", " + myRs.getString("username") + ", " + myRs.getString("abra"));
+                System.out.println(myRs.getString("id") + " | " + myRs.getString("username") + " | " + myRs.getString("abra"));
             }
 
 

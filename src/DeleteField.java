@@ -3,7 +3,7 @@ import java.sql.*;
 /**
  * Created by alex on 24.04.2017.
  */
-public class DeleteFieldById {
+public class DeleteField {
 
         public static void main(String[] args) throws SQLException {
             Connection myConn = null;
@@ -11,8 +11,8 @@ public class DeleteFieldById {
             ResultSet myRs = null;
 
             String dbURL = "jdbc:mysql://localhost:3306/?useSSL=false";
-            String user = "student";
-            String pass = "student";
+            String user = "root";
+            String pass = "Qwerty!1";
 
             try {
                 // 1. Get Connection to DB
@@ -25,8 +25,7 @@ public class DeleteFieldById {
                 //Delete field by ID
 
                 int rowsAffected1 = myStmt.executeUpdate(
-                        "delete from world.tablefirst" +
-                                "where id ='2'");
+                        "delete from world.tablefirst where id ='3'");
 
 
                 // 4. Get the list of employees
@@ -34,7 +33,7 @@ public class DeleteFieldById {
 
                 // 5. Process the result set
                 while (myRs.next()) {
-                    System.out.println(myRs.getString("id") + ", " + myRs.getString("username") + ", " + myRs.getString("abra"));
+                    System.out.println(myRs.getString("id") + " | " + myRs.getString("username") + " | " + myRs.getString("abra"));
                 }
 
 
