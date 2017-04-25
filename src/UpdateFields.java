@@ -1,9 +1,9 @@
 import java.sql.*;
 
 /**
- * Created by alex on 29.03.2017.
+ * Created by alex on 25.04.2017.
  */
-public class InsertIntoTable {
+public class UpdateFields {
 
     public static void main(String[] args) throws SQLException {
         Connection myConn = null;
@@ -23,7 +23,7 @@ public class InsertIntoTable {
             myStmt = myConn.createStatement();
 
 
-            //3. Insert a new line
+            //3. Update a field
             System.out.println("Inserting a new city to DB\n");
             int rowsAffected = myStmt.executeUpdate(
                     "insert into world.tablefirst" +"(id,username,abra)"+
@@ -48,5 +48,5 @@ public class InsertIntoTable {
         }
     }
 
-}
 
+}
