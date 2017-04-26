@@ -22,8 +22,8 @@ public class DeleteField {
                 // 2. Create a statement
                 myStmt = myConn.createStatement();
 
-                //Delete field by ID
 
+                System.out.println("Delete field by ID");
                 int rowsAffected1 = myStmt.executeUpdate(
                         "delete from world.tablefirst where id ='3'");
 

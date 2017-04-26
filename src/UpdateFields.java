@@ -26,8 +26,7 @@ public class UpdateFields {
             //3. Update a field
             System.out.println("Inserting a new city to DB\n");
             int rowsAffected = myStmt.executeUpdate(
-                    "insert into world.tablefirst" +"(id,username,abra)"+
-                            "values"  + "('4','Ponya','2013-12-30')");
+                    "update world.tablefirst set  id='5',username ='Oleksii',abra='2014-01-05'  where id ='5' ");
 
 
             // 4. Get the list of emloyees
